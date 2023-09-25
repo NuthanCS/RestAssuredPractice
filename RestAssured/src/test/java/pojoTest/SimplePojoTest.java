@@ -8,7 +8,7 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pojoExample.SimplePojo;
+import pojo.simple.SimplePojo;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.MatcherAssert.assertThat;

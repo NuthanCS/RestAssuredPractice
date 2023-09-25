@@ -6,9 +6,9 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pojoExample.createUserPojo.AddressPojo;
-import pojoExample.createUserPojo.GeoPojo;
-import pojoExample.createUserPojo.UserMainPojo;
+import pojo.createUser.AddressPojo;
+import pojo.createUser.GeoPojo;
+import pojo.createUser.UserMainPojo;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
