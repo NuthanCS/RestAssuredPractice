@@ -31,7 +31,7 @@ public class UploadAndDownloadFile {
                 then().log().all().extract().response().asByteArray();
 
         //converting bytes to a file and we need to write into it a file
-        OutputStream os =new FileOutputStream(new File("src/main/resources/ApiDemos-debug.apk"));
+        OutputStream os =new FileOutputStream(new File("ApiDemos-debug.apk"));
         os.write(bytes);
         os.close();
     }
