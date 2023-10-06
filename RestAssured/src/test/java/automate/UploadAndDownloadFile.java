@@ -27,11 +27,11 @@ public class UploadAndDownloadFile {
         byte[] bytes = given().baseUri("https://raw.githubusercontent.com").log().all().
 
                 when().
-                post("/appium/appium/master/packages/appium/sample-code/apps/ApiDemos-debug.apk").
+                get("/appium/appium/master/packages/appium/sample-code/apps/ApiDemos-debug.apk").
                 then().log().all().extract().response().asByteArray();
 
         //converting bytes to a file and we need to write into it a file
-        OutputStream os =new FileOutputStream(new File("ApiDemos-debug.apk"));
+        OutputStream os =new FileOutputStream(new File("src/main/resources/ApiDemos-debug.apk"));
         os.write(bytes);
         os.close();
     }

@@ -54,7 +54,7 @@ public class LoggingUsingFilters {
 
     @Test
     public void LoggingToFileUsingFilters() throws FileNotFoundException {
-        // using PrinStream class object we create a new File
+        // using PrintyStream class object we create a new File
         //PrintStream printStream = new PrintStream("src/main/resources/Sample.log"); another way of creating file
         PrintStream printStream = new PrintStream(new File("src/main/resources/Sample.log"));
         given().baseUri("https://postman-echo.com").
