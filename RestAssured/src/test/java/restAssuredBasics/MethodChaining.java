@@ -5,7 +5,7 @@ public class MethodChaining {
 
     public static void main(String[] args)
     {
-        a1().a2().a3();
+        a1().a2().a3().a4();
     }
 
     public static MethodChaining a1()
@@ -26,5 +26,10 @@ public class MethodChaining {
         return this;
     }
 
+    public MethodChaining a4()
+    {
+        System.out.println("A4");
+        return this;
+    }
 
 }

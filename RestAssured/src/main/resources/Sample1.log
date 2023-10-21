@@ -10,12 +10,12 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Mon, 11 Sep 2023 10:53:23 GMT
+Date: Mon, 16 Oct 2023 08:46:12 GMT
 Content-Type: application/json; charset=utf-8
 Content-Length: 363
 Connection: keep-alive
-ETag: W/"16b-6HAFlAPYsz5paBbGXpE7ffmovQU"
-set-cookie: sails.sid=s%3AU49VjrYeJdfCqD-prnIUgGu831QT8FV2.KWp8xt%2BkCvxa1kghLzEofksLsLBIQfN2%2BAphRReHAjI; Path=/; HttpOnly
+ETag: W/"16b-XAdbCxM8p4g6jcKv0SUVkT0PFCE"
+set-cookie: sails.sid=s%3AH91y3fK1iMgwzL53Nyk2KpW1DBqF1ToC.b8PHDqA8qdsTiVI8FZeesx%2Bvw877n%2FibxuaxWWpLM2k; Path=/; HttpOnly
 
 {
     "args": {
@@ -25,7 +25,7 @@ set-cookie: sails.sid=s%3AU49VjrYeJdfCqD-prnIUgGu831QT8FV2.KWp8xt%2BkCvxa1kghLzE
         "x-forwarded-proto": "https",
         "x-forwarded-port": "443",
         "host": "postman-echo.com",
-        "x-amzn-trace-id": "Root=1-64fef1a3-1aa403fa104d4ce02f3e46c1",
+        "x-amzn-trace-id": "Root=1-652cf854-6eaf168569e7483626731152",
         "accept": "*/*",
         "user-agent": "Apache-HttpClient/4.5.13 (Java/1.8.0_202)",
         "accept-encoding": "gzip,deflate"

@@ -56,7 +56,7 @@ public class LoggingUsingFilters {
     public void LoggingToFileUsingFilters() throws FileNotFoundException {
         // using PrintyStream class object we create a new File
         //PrintStream printStream = new PrintStream("src/main/resources/Sample.log"); another way of creating file
-        PrintStream printStream = new PrintStream(new File("src/main/resources/Sample.log"));
+        PrintStream printStream = new PrintStream(new File("src/main/resources/Sample2.log"));
         given().baseUri("https://postman-echo.com").
 
                 //instead of log().all() we can use filters and we can exclude/include request and response information
