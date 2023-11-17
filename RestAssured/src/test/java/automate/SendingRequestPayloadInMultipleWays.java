@@ -6,6 +6,7 @@ import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.config.EncoderConfig;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import io.restassured.specification.ResponseSpecification;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -17,6 +18,7 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.config;
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 
@@ -145,5 +147,59 @@ public class SendingRequestPayloadInMultipleWays {
                 spec(customResponseSpecification).
                 assertThat().body("msg",equalTo("success"));
 
+    }
+
+    @Test
+    public void complexJson()
+    {
+        ArrayList<Integer> arrayListId = new ArrayList<>();
+        arrayListId.add(5);
+        arrayListId.add(9);
+
+        HashMap<String,Object> batter1 = new HashMap<>();
+        batter1.put("id", arrayListId);
+        batter1.put("type","Chocolate");
+
+        HashMap<String, Object> batter2 = new HashMap<>();
+        batter2.put("id","1001");
+        batter2.put("type","Regular");
+
+        ArrayList<HashMap<String, Object>> batterList = new ArrayList<>();
+        batterList.add(batter1);
+        batterList.add(batter2);
+
+        HashMap<String, List<HashMap<String, Object>>> battersMap = new HashMap<>();
+        battersMap.put("batter", batterList);
+
+        ArrayList<String> typeList = new ArrayList<>();
+        typeList.add("test1");
+        typeList.add("test2");
+
+        HashMap<String, Object> topping2 = new HashMap<>();
+        topping2.put("id","5002");
+        topping2.put("type",typeList);
+
+        HashMap<String, Object> topping1 = new HashMap<>();
+        topping1.put("id","5001");
+        topping1.put("type","None");
+
+        ArrayList<HashMap<String, Object>> toppingList = new ArrayList<>();
+        toppingList.add(topping1);
+        toppingList.add(topping2);
+
+        HashMap<String, Object> mainMap = new HashMap<>();
+        mainMap.put("id","0001");
+        mainMap.put("type","donut");
+        mainMap.put("name","Cake");
+        mainMap.put("ppu",0.55);
+        mainMap.put("batters",battersMap);
+        mainMap.put("topping",toppingList);
+
+         given().body(mainMap).
+                when().
+                post("/postComplexJson").
+                 then().
+                 spec(customResponseSpecification).
+                log().all().assertThat().body("msg",equalTo("success"));
     }
 }
